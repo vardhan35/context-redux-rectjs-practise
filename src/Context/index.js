@@ -1,8 +1,15 @@
 import React, { Component } from "react";
+import Booklist from "./components/Booklist";
+import Navbar from "./components/Navbar";
 
 class Index extends Component {
   render() {
-    return <h1>Hello from Context</h1>;
+    return (
+      <div className="context_app">
+        <Navbar />
+        <Booklist />
+      </div>
+    );
   }
 }
 
