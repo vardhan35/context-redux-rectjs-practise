@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SongForm from "./SongForm";
 
 const SongList = () => {
@@ -8,9 +8,16 @@ const SongList = () => {
     { id: 3, title: "Song 3" },
     { id: 4, title: "Song 4" },
   ]);
+  const [age, setAge] = useState(24);
   const addSong = (title) => {
     setSongs([...songs, { title, id: 5 }]);
   };
+  useEffect(() => {
+    console.log("USEeFFECT RAN", songs);
+  }, [songs]);
+  useEffect(() => {
+    console.log("USEeFFECT RAN", age);
+  }, [age]);
   return (
     <div className="songlist_app">
       <ul>
@@ -20,6 +27,7 @@ const SongList = () => {
         })}
       </ul>
       <SongForm addSong={addSong} />
+      <button onClick={() => setAge(age + 1)}>Add to Age:{age}</button>
     </div>
   );
 };
