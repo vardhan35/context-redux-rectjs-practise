@@ -1,7 +1,13 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import BookProvider from "./Context/BookContext";
 
 const Index = () => {
-  return <h1>Hello from Project</h1>;
+  return (
+    <BookProvider>
+      <Navbar />
+    </BookProvider>
+  );
 };
 
 export default Index;
