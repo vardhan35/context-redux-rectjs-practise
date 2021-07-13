@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <Project />
       <Main />
+      <h2>Hello World</h2>
     </div>
   );
 }
